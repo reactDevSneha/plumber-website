@@ -1,0 +1,383 @@
+/* TABLE OF CONTENTS */
+/* ------------------
+1. General
+2. Navbar
+3. Banner  
+4. Best Deals
+5. Donate 
+6. Footer
+-------------------- */
+
+
+
+/* 1 General */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Background Color */
+    --bg-red: #d3282e;
+    --bg-white: #fff;
+    --bg-light-white: #f6f7f8;
+    --bg-yellow: #fdd800;
+    --bg-green: #009900;
+
+    /* Text Color */
+    --text-black: #1f1f1f;
+    --text-white: #fff;
+    --text-red: #d3282e;
+    --text-green: #009900;
+    --text-yellow: #fdd800;
+
+    /* Fonts */
+    --primary-font: 'Great Vibes', cursive;
+    --secondary-font: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--secondary-font);
+    background-color: var(--bg-white);
+} 
+ 
+
+/* Custom CSS */ 
+::-webkit-scrollbar {
+    width: 8px;
+} 
+  ::-webkit-scrollbar-track {
+    background: var(--bg-light-white); 
+} 
+::-webkit-scrollbar-thumb {
+    background: var(--bg-green); 
+} 
+.text-red{
+    color:var(--text-red);
+}
+.bg-red{
+    background-color:var(--bg-red) !important;
+}
+.bg-light-white{
+    background-color:var(--bg-light-white) !important;
+}
+.bg-green{
+    background-color:var(--bg-green) !important;
+}
+.main-btn{  
+    padding:10px 25px;
+    background:var(--bg-yellow);
+    color:var(--text-black);
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 0 15px;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-transform:perspective(1px) translateZ(0);
+    transform:perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+    position:relative;
+    overflow:hidden;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+.main-btn:hover{
+    color:var(--text-white) !important;
+}
+.main-btn::before{
+    content:'';
+    position:absolute;
+    z-index:-1;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:var(--bg-green);
+    border-radius: 100%;
+    -webkit-transform:scale(0);
+    transform:scale(0);
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.main-btn:hover::before,
+.main-btn:focus::before,
+.main-btn:active::before{
+    -webkit-transform:scale(2);
+    transform:scale(2);
+}
+
+h1{
+    font-size:80px;
+    font-family: var(--primary-font);
+    letter-spacing:5px;
+    font-weight: 500;
+    color:var(--text-white);
+} 
+h3{
+    font-size:35px; 
+    letter-spacing:2px;
+    font-weight: 700;
+    color:var(--text-white);
+    margin-bottom:15px;
+}
+h4{
+    font-size:27px; 
+    letter-spacing:2px;
+    font-weight: 500;
+    color:var(--text-white);
+    margin-bottom:15px;
+}
+h5{
+    font-size:22px; 
+    letter-spacing:2px;
+    font-weight: 500;
+    color:var(--text-white);
+    margin-bottom:15px;
+}
+p{
+    margin-top:5px;
+    margin-bottom:1rem;
+    font-size:16px;
+    font-weight: 300;
+    line-height:normal;
+    color:var(--text-white);
+}
+
+
+/*snowflake design */
+.snowflake{
+    display:block;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    position:fixed;
+    background-repeat: repeat;
+    z-index:100000;
+    pointer-events: none;
+    -moz-animation:snow_animation 10s linear infinite;
+    -webkit-animation:snow_animation 10s linear infinite;
+    animation:snow_animation 10s linear infinite;
+}
+@-moz-keyframes snow_animation {
+    0%{
+        background-position: 0 0, 0 0, 0 0;
+    }
+    100%{
+        background-position: 500px 3000px, 0 400px, 0 300px;
+    }
+}
+@-webkit-keyframes snow_animation {
+    0%{
+        background-position: 0 0, 0 0, 0 0;
+    }
+    100%{
+        background-position: 500px 3000px, 0 400px, 0 300px;
+    }
+}
+@keyframes snow_animation {
+    0%{
+        background-position: 0 0, 0 0, 0 0;
+    }
+    100%{
+        background-position: 500px 3000px, 0 400px, 0 300px;
+    }
+}
+
+/* 2 Navbar */
+.header_wrapper .navbar{
+    -o-transition:all .2s linear;
+    -webkit-transition:all .2s linear;
+    transition:all .2s linear;
+}
+.header_wrapper .navbar-brand h6{
+  color: var(--text-red);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin: 0 0;
+}
+.header_wrapper .nav-item{
+    margin: 0 10px;
+}
+.header_wrapper .nav-item .nav-link{
+    font-size:15px;
+    font-weight: 500;
+    color:var(--text-white);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.header_wrapper .nav-item .nav-link.active{
+    color:var(--text-yellow);
+}
+.header-scrolled{
+    position:fixed;
+    margin-top:0;
+    top:0;
+    left:0;
+    width:100%;
+    height:85px;
+    background:var(--bg-yellow) !important;
+    -webkit-box-shadow: 0 4px 6px 0 rgba(12,0,46,.05);
+    box-shadow: 0 4px 6px 0 rgba(12,0,46,.05);
+} 
+.header-scrolled .nav-item .nav-link{
+    color:var(--text-black);
+}
+.header-scrolled .nav-item .nav-link.active{
+    color:var(--text-red);
+}
+.header-scrolled .navbar-brand img{
+    filter:invert(0);
+} 
+
+/* 3 Banner */
+#home {
+    overflow-x: hidden;
+}
+.carousel-caption {
+	bottom: 20rem;
+	z-index: 3;
+}
+.carousel-indicators [data-bs-target]{
+    width:12px;
+    height:12px;
+    border-radius: 50%;
+    background-color:var(--bg-yellow) !important;
+}
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    z-index: 1; 
+}
+
+
+
+/* 4 Best Deals */
+
+.best_deals_wrapper .card{
+   height: 100%;
+}
+.best_deals_wrapper .card p{
+ color: var(--text-black);
+}
+.best_deals_wrapper .card h4{
+ color: var(--text-black);
+ font-size: 20px;
+}
+
+/* 5 Donate */
+.donate_wrapper .donate-item{
+    position:relative;
+    float:left;
+    overflow:hidden;
+    cursor:pointer;
+    transition:all 0.3s ease-in-out;
+}
+.donate_wrapper .donate-item img{
+    transition:0.3s all ease-in-out;
+}
+.donate_wrapper .donate-item img:hover{
+    transform:scale(1.2);
+}
+.donate_wrapper .donate-item:hover{
+    border-color:var(--bg-red) !important;
+} 
+#services h1 {
+    color: var(--text-red)
+
+}
+#services h5 {
+    color: var(--text-black);
+    margin-top: 10px;
+}
+/* testimonial  */
+#testimonials .testimonial-image {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 10px;
+}
+#testimonials .testimonial-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+}
+/* 6 footer */
+.footer_wrapper{
+    width:100%;
+    height:auto;
+    background-color: var(--bg-red);
+ 
+}
+.footer_wrapper .block_newsletter{
+    background-color:var(--bg-yellow);
+    overflow:hidden;
+    display:block;
+    padding:35px 30px;
+    border-radius: 80px;
+} 
+.footer_wrapper .block_newsletter input{
+    border-radius: 25px;
+    height:50px;
+}
+.footer_wrapper .block_newsletter input:focus,
+.footer_wrapper .block_newsletter button{
+    outline:none;
+    box-shadow: none;
+}
+.footer_wrapper .block_newsletter button{
+    font-size: 14px;
+    font-weight: 400;
+    padding:15px 20px;
+    height:50px;
+    line-height: 20px;
+    border-radius: 25px;
+    background-color:var(--bg-red);
+    border-color:var(--bg-red);
+    color:var(--text-white);
+    text-transform: uppercase;
+}
+.footer_wrapper .block_newsletter button:hover{
+    background-color:var(--bg-green);
+    border-color:var(--bg-green);
+}
+.footer_wrapper ul li a{
+    font-size: 15px;
+    color:var(--text-white);
+    line-height: 30px;
+    font-weight: 400;
+    text-decoration: none;
+}
+.footer_wrapper .footer_social_media_icon{
+    padding:0;
+    border-radius: 50%;
+    height:34px; 
+    text-align: center;
+    width:34px;
+    margin:0 10px 10px 0;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    background-color:var(--bg-yellow);
+    color:var(--text-black);
+    text-decoration: none;
+}
+.footer_wrapper .footer_social_media_icon:hover{
+    background-color:var(--bg-green);
+    color:var(--text-white);
+}
